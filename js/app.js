@@ -29,11 +29,11 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) {
-  let answer = a * b;
-  console.log([answer, `The product of ${5} and ${9} is ${answer}.`]);
-  return [answer, `The product of ${5} and ${9} is ${answer}.`];
-}
+// function multiply(a, b) {
+//   let answer = a * b;
+//   console.log([answer, `The product of ${5} and ${9} is ${answer}.`]);
+//   return [answer, `The product of ${5} and ${9} is ${answer}.`];
+// }
 // multiply(5, 9);
 
 // Here is the test for multiply(); uncomment it to run it
@@ -53,16 +53,16 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) {
-  let tripleNumberSum = sum(sum(a, b)[0], c);
-  let tripleMultiply =multiply(multiply(a, b)[0], c);
-  console.log([tripleNumberSum[0], tripleMultiply[0], `${a} and ${b} and ${c} sum to ${tripleNumberSum[0]}.`, `The product of ${a} and ${b} and ${c} is ${tripleNumberSum[0]}.`]);
-  return [tripleNumberSum[0], tripleMultiply[0], `${a} and ${b} and ${c} sum to ${tripleNumberSum[0]}.`, `The product of ${a} and ${b} and ${c} is ${tripleMultiply[0]}.`];
-}
+// function sumAndMultiply(a, b, c) {
+//   let tripleNumberSum = sum(sum(a, b)[0], c);
+//   let tripleMultiply =multiply(multiply(a, b)[0], c);
+//   console.log([tripleNumberSum[0], tripleMultiply[0], `${a} and ${b} and ${c} sum to ${tripleNumberSum[0]}.`, `The product of ${a} and ${b} and ${c} is ${tripleNumberSum[0]}.`]);
+//   return [tripleNumberSum[0], tripleMultiply[0], `${a} and ${b} and ${c} sum to ${tripleNumberSum[0]}.`, `The product of ${a} and ${b} and ${c} is ${tripleMultiply[0]}.`];
+// }
 // sumAndMultiply(4, 7, 5);
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+// testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -77,15 +77,25 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-let testArray = [2, 3, 4]; //eslint-disable-line
+let testArray = [2, 3, 4];
 
-function sumArray(sumArr) { //eslint-disable-line
+// function sumArray(sumArr) {
+//   for (let i = 0; i < sumArr.length; i++) {
+//     let answer = sum(sumArr[i], sumArr[i + 1])[0];
+//   }
+//   console.log([answer, `${sumArr} was passed in as an array of numbers, and ${answer} is their sum.`]);
+//   return [answer, `${sumArr} was passed in as an array of numbers, and ${answer} is their sum.`];
+// }
+// sumArray(testArray);
 
+function sumArray(sumArr) {
+  let answer = sum(sum(sumArr[0], sumArr[1])[0], sumArr[2]);
+  console.log([answer[0,0], `${sumArr} was passed in as an array of numbers, and ${answer[0,0]} is their sum.`]);
+  return [answer[0,0], `${sumArr} was passed in as an array of numbers, and ${answer[0,0]} is their sum.`];
 }
-
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
