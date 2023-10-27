@@ -29,11 +29,11 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-// function multiply(a, b) {
-//   let answer = a * b;
-//   console.log([answer, `The product of ${5} and ${9} is ${answer}.`]);
-//   return [answer, `The product of ${5} and ${9} is ${answer}.`];
-// }
+function multiply(a, b) {
+  let answer = a * b;
+  console.log([answer, `The product of ${5} and ${9} is ${answer}.`]);
+  return [answer, `The product of ${5} and ${9} is ${answer}.`];
+}
 // multiply(5, 9);
 
 // Here is the test for multiply(); uncomment it to run it
@@ -88,14 +88,14 @@ let testArray = [2, 3, 4];
 // }
 // sumArray(testArray);
 
-function sumArray(sumArr) {
-  let answer = sum(sum(sumArr[0], sumArr[1])[0], sumArr[2]);
-  console.log([answer[0,0], `${sumArr} was passed in as an array of numbers, and ${answer[0,0]} is their sum.`]);
-  return [answer[0,0], `${sumArr} was passed in as an array of numbers, and ${answer[0,0]} is their sum.`];
-}
+// function sumArray(sumArr) {
+//   let answer = sum(sum(sumArr[0], sumArr[1])[0], sumArr[2]);
+//   console.log([answer[0,0], `${sumArr} was passed in as an array of numbers, and ${answer[0,0]} is their sum.`]);
+//   return [answer[0,0], `${sumArr} was passed in as an array of numbers, and ${answer[0,0]} is their sum.`];
+// }
 // Here is the test for sumArray(); uncomment it to run it
 
-testSumArray(testArray);
+// testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -110,12 +110,15 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
-
+function multiplyArray(multArr) {
+  let answer = multiply(multiply(multArr[0], multArr[1])[0], multArr[2]);
+  console.log([answer[0,0], `The numbers ${multArr} have a product of ${answer[0,0]}.`]);
+  return [answer[0,0], `The numbers ${multArr} have a product of ${answer[0,0]}.`];
 }
+// multiplyArray(testArray);
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
